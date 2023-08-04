@@ -107,7 +107,7 @@ resource "aws_iam_role_policy_attachment" "s3" {
 
 resource "aws_iam_role_policy_attachment" "autoscaler" {
   policy_arn = aws_iam_policy.autoscaler.arn
-  role       = [aws_iam_role.worker.name]
+  role       = aws_iam_role.worker.name
 }
 
 resource "aws_iam_instance_profile" "worker" {
